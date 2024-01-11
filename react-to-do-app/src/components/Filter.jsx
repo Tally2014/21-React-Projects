@@ -5,13 +5,16 @@ const options = {
 };
 
 export default function Filter(props) {
-    const {filter} = props;
+    const {filter, change} = props;
+    const getClass = (key) => (key === filter ? 'selected' : '');
   return (
     <ul className='filters list-unstyled clearfix'>
         {Object.keys(options).map(key => (
-                <li key={key}>
-                    <a className={key === filter ? 'selected' : ''}>{options[key]}</a>
-                </li>
+            <li key={key}>
+                <a onClick={() => change(key)} className={getClass(key)}>
+                    {options[key]}
+                </a>
+            </li>
         ))}
     </ul>
   )
