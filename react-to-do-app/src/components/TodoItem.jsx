@@ -1,13 +1,14 @@
 import CheckBox from './CheckBox';
 
 function TodoItem(props) {
-    const {data, completed} = props;
+    const {data, changeStatus} = props;
+    const handleChange = (checked) => changeStatus(data.id, checked);
 
     return (
         <li className="ui-state-default">
             <div className="checkbox">
                 <label>
-                    <CheckBox checked={completed}/> {data.text}
+                    <CheckBox checked={data.completed} onChange={handleChange}/> {data.text}
                 </label>
             </div>
         </li>
