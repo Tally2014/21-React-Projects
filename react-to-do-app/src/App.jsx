@@ -1,10 +1,20 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  let items = [
+    {
+        text: 'Learn Javascript',
+        completed: false
+    },
+    {
+        text: 'Learn React',
+        completed: false
+    },
+    {
+        text: 'Build a React App',
+        completed: false
+    }
+];
 
   return (
     <>
@@ -14,21 +24,13 @@ function App() {
             <div className='todolist'>
               <h1>Todos</h1>
               <ul className='list-unstyled'>
-                <li className='ui-state-default'>
-                  <div className='checkbox'>
-                    <label><input type="checkbox" value=""/>ake out the Trash</label>
-                  </div>
-                </li>
+              {items.map(item => (
                 <li className="ui-state-default">
-                  <div className="checkbox">
-                    <label><input type="checkbox" value=""/>Buy bread</label>
-                  </div>
-                </li>
-                <li className="ui-state-default">
-                  <div className="checkbox">
-                      <label><input type="checkbox" value=""/>Teach penguins to fly</label>
-                  </div>
-                </li>
+                    <div className="checkbox">
+                      <label><input type="checkbox" value=""/>{item.text}</label>
+                     </div>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
