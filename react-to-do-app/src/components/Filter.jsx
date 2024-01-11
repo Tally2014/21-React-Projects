@@ -1,8 +1,5 @@
-const options = {
-    'all': 'All',
-    'active': 'Active',
-    'completed': 'Completed'
-};
+import {getOptions} from './../services/filter';
+const options = getOptions();
 
 export default function Filter(props) {
     const {filter, change} = props;
