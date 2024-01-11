@@ -4,6 +4,7 @@ import Footer from './Footer';
 
 function TodoList(props){
     const {title, items} = props;
+    const count = items.length;
     return(
         <div>
            <div className='todolist'>
@@ -11,7 +12,7 @@ function TodoList(props){
               <ul className='list-unstyled'>
                 {items.map(item => <TodoItem key={item.id} data={item}/>)}
               </ul>
-              <Footer/>
+              <Footer count={count}/>
             </div> 
         </div>
     )
