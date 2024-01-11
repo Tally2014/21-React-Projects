@@ -2,7 +2,7 @@ import '../App.css'
 import TodoList from './TodoList';
 import React, {Component} from 'react';
 import {FILTER_ALL} from './../services/filter';
-import {getAll, createNew, updateStatus} from './../services/todo';
+import {getAll, addToList, updateStatus} from './../services/todo';
 
 
 class App extends Component {
@@ -31,13 +31,7 @@ class App extends Component {
     )
   } 
   addNew(text) {
-    let nextId = this.state.items.length + 1;
-    let item = {
-        id: nextId,
-        text: text
-    };
-    let updatedList = this.state.items.concat([item]);
-
+    let updatedList = addToList(this.state.items, {text, completed: false});
     this.setState({items: updatedList})
   }
 
