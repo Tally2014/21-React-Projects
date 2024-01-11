@@ -10,15 +10,18 @@ function TodoList(props){
     const filteredList = applyFilter(items, filter);
 
     return(
-        <div>
-           <div className='todolist'>
-              <Header title={title} addNew={addNew}/>
-              <ul className='list-unstyled'>
-                 {filteredList.map(item => <TodoItem key={item.id} data={item}/>)}
-              </ul>
-              <Footer {...{count, filter, changeFilter}}/>
-            </div> 
-        </div>
+      <div className='todolist'>
+          <Header title={title} addNew={addNew}/>
+          {filteredList.length > 0
+                ? (
+                    <ul className="list-unstyled">
+                        {filteredList.map(item => <TodoItem key={item.id} data={item}/>)}
+                    </ul>
+                )
+                : <p className="alert alert-info">There are no items.</p>
+            }
+          <Footer {...{count, filter, changeFilter}}/>
+       </div> 
     )
 }
 
