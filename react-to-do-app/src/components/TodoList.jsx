@@ -1,6 +1,7 @@
 import TodoItem from './TodoItem';
 import Header from './Header';
 import Footer from './Footer';
+import {applyFilter} from './../services/filter.jsx';
 
 function TodoList(props){
     const {title, items, addNew, filter, changeFilter} = props;
@@ -19,19 +20,6 @@ function TodoList(props){
             </div> 
         </div>
     )
-}
-
-function applyFilter(list, filter) {
-  switch (filter) {
-      case 'completed':
-          return list.filter(item => item.completed === true);
-
-      case 'active':
-          return list.filter(item => item.completed !== true);
-
-      default:
-          return list;
-  }
 }
 
 export default TodoList;
