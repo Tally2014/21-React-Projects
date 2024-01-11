@@ -5,7 +5,7 @@ export default function Header(props){
     return(      
         <header>
             <h1>{title.toUpperCase()}</h1>
-            <InputBox/>
+            <InputBox addNew={addNew}/>
         </header>
     )
 }
