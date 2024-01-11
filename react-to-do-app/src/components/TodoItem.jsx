@@ -1,11 +1,13 @@
+import CheckBox from './CheckBox';
+
 function TodoItem(props) {
-    const {data} = props;
+    const {data, completed} = props;
 
     return (
         <li className="ui-state-default">
             <div className="checkbox">
                 <label>
-                    <input type="checkbox" value=""/> {data.text}
+                    <CheckBox checked={completed}/> {data.text}
                 </label>
             </div>
         </li>
