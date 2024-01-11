@@ -1,7 +1,7 @@
 import '../App.css'
 import TodoList from './TodoList';
 import React, {Component} from 'react';
-import {FILTER_ACTIVE} from './../services/filter';
+import {FILTER_ALL} from './../services/filter';
 import {getAll, createNew, updateStatus} from './../services/todo';
 
 
@@ -9,7 +9,7 @@ class App extends Component {
   constructor(){
     super();
     this.state = {
-      filter: FILTER_ACTIVE,
+      filter: FILTER_ALL,
       items:getAll()
     }  
   }
