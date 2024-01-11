@@ -2,6 +2,7 @@ import '../App.css'
 import TodoList from './TodoList';
 import React, {Component} from 'react';
 import {FILTER_ACTIVE} from './../services/filter';
+import {getAll, createNew} from './../services/todo';
 
 
 class App extends Component {
@@ -9,23 +10,7 @@ class App extends Component {
     super();
     this.state = {
       filter: FILTER_ACTIVE,
-      items:[
-        {
-          id: 1,
-          text: 'Learn Javascript',
-          completed: false
-        },
-        {
-            id: 2,
-            text: 'Learn React',
-            completed: false
-        },
-        {
-            id: 3,
-            text: 'Build a React App',
-            completed: false
-        }
-      ]
+      items:getAll()
     }  
   }
   render(){
