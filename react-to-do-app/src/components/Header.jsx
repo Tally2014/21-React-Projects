@@ -1,7 +1,7 @@
 import InputBox from "./InputBox";
 
 export default function Header(props){
-    const {title} = props;
+    const {title, addNew} = props;
     return(      
         <header>
             <h1>{title.toUpperCase()}</h1>
