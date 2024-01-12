@@ -1,6 +1,7 @@
 import '../App.css'
 import TodoList from './TodoList';
 import React, {Component} from 'react';
+import StateProvider from './StateProvider';
 
 
 class App extends Component {
@@ -10,7 +11,9 @@ class App extends Component {
       <>
         <div className='container'>
             <div className='row'>
-            <TodoList/>
+              <StateProvider>
+                <TodoList/>
+              </StateProvider>
             </div>
         </div>
       </>
